@@ -106,34 +106,34 @@ public final class R {
 	public static final class id {
 		public static final int both = 0x7f06001a;
 		public static final int clickRemove = 0x7f060012;
-		public static final int dialog_msg = 0x7f06005b;
+		public static final int dialog_msg = 0x7f06005d;
 		public static final int disabled = 0x7f060017;
 		public static final int fill = 0x7f060011;
-		public static final int fl_inner = 0x7f06009b;
+		public static final int fl_inner = 0x7f06009f;
 		public static final int flingRemove = 0x7f060013;
 		public static final int flip = 0x7f06001f;
 		public static final int manualOnly = 0x7f06001b;
 		public static final int onDown = 0x7f060014;
 		public static final int onLongPress = 0x7f060016;
 		public static final int onMove = 0x7f060015;
-		public static final int progressBar = 0x7f06005a;
-		public static final int progressBarTwo = 0x7f06005c;
+		public static final int progressBar = 0x7f06005c;
+		public static final int progressBarTwo = 0x7f06005e;
 		public static final int pullDownFromTop = 0x7f06001c;
 		public static final int pullFromEnd = 0x7f060019;
 		public static final int pullFromStart = 0x7f060018;
 		public static final int pullUpFromBottom = 0x7f06001d;
-		public static final int pull_to_refresh_image = 0x7f06009c;
-		public static final int pull_to_refresh_progress = 0x7f06009d;
-		public static final int pull_to_refresh_sub_text = 0x7f06009f;
-		public static final int pull_to_refresh_text = 0x7f06009e;
+		public static final int pull_to_refresh_image = 0x7f0600a0;
+		public static final int pull_to_refresh_progress = 0x7f0600a1;
+		public static final int pull_to_refresh_sub_text = 0x7f0600a3;
+		public static final int pull_to_refresh_text = 0x7f0600a2;
 		public static final int rotate = 0x7f06001e;
 		public static final int stroke = 0x7f060010;
 	}
 	public static final class layout {
-		public static final int dialog_layout = 0x7f030021;
-		public static final int dialog_layout_call = 0x7f030022;
-		public static final int pull_to_refresh_header_horizontal = 0x7f030032;
-		public static final int pull_to_refresh_header_vertical = 0x7f030033;
+		public static final int dialog_layout = 0x7f030022;
+		public static final int dialog_layout_call = 0x7f030023;
+		public static final int pull_to_refresh_header_horizontal = 0x7f030035;
+		public static final int pull_to_refresh_header_vertical = 0x7f030036;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f0b000d;

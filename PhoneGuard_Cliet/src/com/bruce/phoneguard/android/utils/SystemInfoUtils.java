@@ -29,8 +29,21 @@ public class SystemInfoUtils {
 		}
 		return false;
 	}
-	
-	/**
+
+    /**
+     * 得到当前正在运行程序的包名
+     返回系统里面的任务栈的信息 , taskinfos的集合里面只有一个元素
+     内容就是当前正在运行的进程对应的任务栈
+     */
+    public static String getCurrentTask(Context context) {
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> taskinfos = am.getRunningTasks(1);
+        ActivityManager.RunningTaskInfo currenttask = taskinfos.get(0);
+        // 获取当前用户可见的activity 所在的程序的包名
+        return currenttask.topActivity.getPackageName();
+    }
+
+    /**
 	 * 获取手机的总内存大小 单位byte
 	 * @return
 	 */

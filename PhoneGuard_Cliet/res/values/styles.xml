@@ -51,10 +51,10 @@
 
     <style name="MyProgressBar" parent="@android:style/Widget.ProgressBar">
         <item name="android:indeterminateDrawable">@drawable/progress_medium_white</item>
-        <item name="android:minWidth">60dip</item>
-        <item name="android:maxWidth">60dip</item>
-        <item name="android:minHeight">60dip</item>
-        <item name="android:maxHeight">60dip</item>
+        <item name="android:minWidth">70dip</item>
+        <item name="android:maxWidth">70dip</item>
+        <item name="android:minHeight">70dip</item>
+        <item name="android:maxHeight">70dip</item>
     </style>
 
     <style name="MyProgressBar_rizontal" parent="@android:style/Widget.ProgressBar.Horizontal">
@@ -77,6 +77,15 @@
         <item name="android:textSize">18.0sp</item>
         <item name="android:textColor">@drawable/skin_color_button</item>
         <item name="android:background">@drawable/common_btn_red</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="@android:style/Theme">
+        <item name="android:windowBackground">@color/transparent_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
     
 </resources>

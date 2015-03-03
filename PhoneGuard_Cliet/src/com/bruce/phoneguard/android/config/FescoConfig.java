@@ -82,8 +82,11 @@ public class FescoConfig {
 	
 	public static final int NOTICE_NOTREAD = 0;	// 未读
 	public static final int NOTICE_ISREAD = 1;	// 已读
-	
-	public static String getStateInString(int state){
+    public static final String GESTURE_FLAG = "GESTURE_FLAG"; //打开手势密码界面的标记
+    public static final String GESTURE_FLAG_SERVICE = "GESTURE_FLAG_SERVICE"; //从服务打开手势密码界面的标记
+    public static final String GESTURE_FLAG_SETTING = "GESTURE_FLAG_SETTING"; //从设置打开手势密码界面的标记
+
+    public static String getStateInString(int state){
 		switch(state){
 		case FescoConfig.REQFLEAVE_STATE_AGREE:
 			return AGREE;

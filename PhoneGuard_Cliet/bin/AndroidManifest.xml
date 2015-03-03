@@ -93,6 +93,10 @@
             android:name="com.bruce.phoneguard.android.activity.UnlockGesturePasswordActivity"
             android:launchMode="singleTask" >
         </activity>
+        <activity
+            android:name=".activity.UnlockGesturePasswordDialogActivity"
+            android:launchMode="singleTask" >
+        </activity>
         <activity android:name="com.bruce.phoneguard.android.activity.AgainstTheftActivity" >
         </activity>
         <activity android:name="com.bruce.phoneguard.android.activity.NumberAddressQueryActivity" >

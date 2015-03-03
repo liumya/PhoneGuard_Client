@@ -91,12 +91,18 @@
         </activity>
         <activity
             android:name="com.bruce.phoneguard.android.activity.UnlockGesturePasswordActivity"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".activity.UnlockGesturePasswordDialogActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Transparent">
         </activity>
         <activity android:name="com.bruce.phoneguard.android.activity.AgainstTheftActivity" >
         </activity>
         <activity android:name="com.bruce.phoneguard.android.activity.NumberAddressQueryActivity" >
         </activity>
+        <activity android:name=".activity.AppLockActivity"></activity>
 
         <!-- 2 特殊的广播接收者，清单文件中配置，拷贝api文档 -->
         <receiver android:name="com.bruce.phoneguard.android.receivers.DesktopWidget" >
@@ -118,6 +124,11 @@
 
         <service android:name="com.bruce.phoneguard.android.services.UpdateWidgetService" >
         </service>
+        <service android:name=".services.WatchDogService"></service>
+        <provider
+                android:authorities="com.bruce.applockprovider"
+                android:name=".provider.AppLockProvider" >
+        </provider>
     </application>
 
 </manifest>

@@ -1,13 +1,8 @@
 package com.bruce.phoneguard.android.fragment;
 
-import com.bruce.phoneguard.android.activity.AddFreqActivity;
-import com.bruce.phoneguard.android.activity.AntiVirusActivity;
-import com.bruce.phoneguard.android.activity.AppManagerActivity;
-import com.bruce.phoneguard.android.activity.CleanCacheActivity;
-import com.bruce.phoneguard.android.activity.NumberAddressQueryActivity;
-import com.bruce.phoneguard.android.activity.TaskManagerActivity;
-import com.bruce.phoneguard.android.activity.TrafficManagerActivity;
-import com.bruce.phoneguard.android.activity.UnlockGesturePasswordActivity;
+import android.app.Activity;
+import com.bruce.phoneguard.android.R;
+import com.bruce.phoneguard.android.activity.*;
 import com.bruce.phoneguard.android.config.FescoConfig;
 import com.bruce.phoneguard.android.model.GridItem;
 
@@ -26,6 +21,10 @@ import android.view.View;
  * */
 
 public abstract class BaseFragment extends Fragment {
+
+    public Context mContext;
+    public Activity mActivity;
+
 	// /**
 	// * 设置公用标题
 	// *
@@ -54,8 +53,6 @@ public abstract class BaseFragment extends Fragment {
 	/**
 	 * 跳转到点击的activity
 	 * 
-	 * @param GridItem
-	 * 
 	 * @author Qi Zhenghao
 	 */
 	public void toClickActivity(GridItem item) {
@@ -82,8 +79,9 @@ public abstract class BaseFragment extends Fragment {
 			getActivity().startActivity(toAddFreq);
 			break;
 		case FescoConfig.AGAINST_THEFT:
-			Intent toGesture = new Intent(getActivity(), UnlockGesturePasswordActivity.class);
+			Intent toGesture = new Intent(getActivity(), UnlockGesturePasswordDialogActivity.class);
 			getActivity().startActivity(toGesture);
+            getActivity().overridePendingTransition(R.anim.open_from_bottom, 0);
 			break;
 		case FescoConfig.TEL_ENQUIRIES:
 			Intent toTelEnquires = new Intent(getActivity(), NumberAddressQueryActivity.class);
@@ -94,8 +92,8 @@ public abstract class BaseFragment extends Fragment {
 //			getActivity().startActivity(toAddFreq);
 			break;
 		case FescoConfig.PROGRAM_LOCK:
-//			Intent toGesture = new Intent(getActivity(), UnlockGesturePasswordActivity.class);
-//			getActivity().startActivity(toGesture);
+			Intent toAppLock = new Intent(getActivity(), AppLockActivity.class);
+			getActivity().startActivity(toAppLock);
 			break;
 
 		default:
@@ -117,6 +115,8 @@ public abstract class BaseFragment extends Fragment {
 
 	/**全部初始化，包括view、data、listener*/
 	public void init() {
+        mContext = getActivity();
+        mActivity = getActivity();
 		initView();
 		initData();
 		initListener();

@@ -1,3 +1,5 @@
+/*___Generated_by_IDEA___*/
+
 /*
  * This file is auto-generated.  DO NOT MODIFY.
  * Original file: D:\\WorkSpace\\Graduation_Design\\PhoneGuard_Client\\PhoneGuard_Cliet\\src\\android\\content\\pm\\IPackageStatsObserver.aidl
