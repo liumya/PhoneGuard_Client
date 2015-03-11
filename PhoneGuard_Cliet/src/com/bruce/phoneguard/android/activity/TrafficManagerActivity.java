@@ -1,8 +1,15 @@
 package com.bruce.phoneguard.android.activity;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.Settings;
+import android.widget.*;
 import com.bruce.phoneguard.android.R;
 import com.bruce.phoneguard.android.model.AppInfo;
 import com.bruce.phoneguard.android.model.parser.AppInfoParser;
@@ -13,11 +20,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
+import com.bruce.phoneguard.android.utils.FileUtils;
 
 public class TrafficManagerActivity extends BaseActivity {
 
@@ -34,9 +37,22 @@ public class TrafficManagerActivity extends BaseActivity {
 		setContentView(R.layout.activity_traffic_manager);
 		initView();
 		initData();
+        setListener();
 	}
 
-	@Override
+    private void setListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                Uri uri = Uri.fromParts("package", infos.get(position).getPackname(), null);
+                intent.setData(uri);
+                startActivity(intent);
+            }
+        });
+    }
+
+    @Override
 	public void initView() {
 		listView = (ListView) findViewById(R.id.lv_traffic_manger);
 		loadingView = (LinearLayout) findViewById(R.id.ll_loading);
@@ -59,7 +75,23 @@ public class TrafficManagerActivity extends BaseActivity {
 		new Thread() {
 			public void run() {
 				infos = AppInfoParser.getAppInfos(TrafficManagerActivity.this);
-				handler.sendEmptyMessage(0);
+                Object[] infoArr = infos.toArray();
+                Arrays.sort(infoArr, new Comparator<Object>() {
+                    @Override
+                    public int compare(Object lhs, Object rhs) {
+                        long left = TrafficStats.getUidTxBytes(((AppInfo)lhs).getUid()) + TrafficStats.getUidRxBytes(((AppInfo)lhs).getUid());
+                        long right = TrafficStats.getUidTxBytes(((AppInfo)rhs).getUid()) + TrafficStats.getUidRxBytes(((AppInfo)rhs).getUid());
+                        if (left >= right) {
+                            return 1;
+                        }
+                        return -1;
+                    }
+                });
+                infos.clear();
+                for (int i=infoArr.length-1;i>=0;i--) {
+                    infos.add((AppInfo) infoArr[i]);
+                }
+                handler.sendEmptyMessage(0);
 			};
 		}.start();
 	}
@@ -115,13 +147,13 @@ public class TrafficManagerActivity extends BaseActivity {
 				holder = (ViewHolder) v.getTag();
 			}
 			AppInfo info = infos.get(position);
-			double tx = TrafficStats.getUidTxBytes(info.getUid()) / (1024 * 1024) * 1000.0 / 1000.0;
-			double rx = TrafficStats.getUidRxBytes(info.getUid()) / (1024 * 1024) * 1000.0 / 1000.0;
+			long tx = TrafficStats.getUidTxBytes(info.getUid());
+			long rx = TrafficStats.getUidRxBytes(info.getUid());
 			holder.imgView.setImageDrawable(info.getIcon());
 			holder.titleTxt.setText(info.getName());
-			holder.trafficTxt.setText((tx + rx) + " M");
-			holder.uploadTxt.setText(tx + "	M");
-			holder.downloadTxt.setText(rx + " M");
+			holder.trafficTxt.setText(FileUtils.getFileSize((tx + rx)));
+			holder.uploadTxt.setText(FileUtils.getFileSize(tx));
+			holder.downloadTxt.setText(FileUtils.getFileSize(rx));
 
 			return v;
 		}

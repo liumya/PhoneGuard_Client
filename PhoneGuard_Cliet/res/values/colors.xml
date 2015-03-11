@@ -26,6 +26,7 @@
     <color name="stran">#00000000</color>
     <color name="blue">#ff0f81d9</color>
     <color name="font_value">#ff888271</color>
+    <color name="transparent">#00000000</color>
     <color name="transparent_90">#90000000</color>
     <color name="transparent_20">#20000000</color>
     <color name="transparent_40">#40000000</color>
@@ -46,4 +47,6 @@
 
     <drawable name="trans">@color/color_hei_8</drawable>
 
+
+    <color name="tab_ling_color">#ff0ae33e</color>
 </resources>

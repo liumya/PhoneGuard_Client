@@ -4,11 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="#ebebeb" />
-
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -37,7 +32,8 @@
             android:id="@+id/lv_traffic_manger"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:fastScrollEnabled="true" >
+            android:fastScrollEnabled="true"
+            android:layout_marginLeft="20dp">
         </ListView>
     </FrameLayout>
 

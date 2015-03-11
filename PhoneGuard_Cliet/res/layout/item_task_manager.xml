@@ -14,19 +14,20 @@
 
     <TextView
         android:id="@+id/tv_task_name"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="5dip"
+        android:layout_marginRight="65dp"
         android:layout_toRightOf="@id/iv_task_icon"
-        android:ellipsize="end"
+        android:ellipsize="middle"
         android:gravity="center_vertical"
         android:layout_marginLeft="5dip"
         android:paddingLeft="5.0dip"
         android:singleLine="true"
         android:text="标题"
         android:textColor="#000000"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tv_task_size"
@@ -43,7 +44,7 @@
         android:singleLine="true"
         android:text="内存大小"
         android:textColor="#99000000"
-        android:textSize="16sp" />
+        android:textSize="14sp" />
     
     <CheckBox 
         android:focusable="false"
@@ -54,7 +55,7 @@
          android:button="@drawable/btn_check"
          android:layout_alignParentRight="true"
          android:layout_centerVertical="true"
-         android:layout_marginRight="20dp"
+         android:layout_marginRight="25dp"
         />
 
 </RelativeLayout>
