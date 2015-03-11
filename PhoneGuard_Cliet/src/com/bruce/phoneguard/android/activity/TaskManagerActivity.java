@@ -124,7 +124,7 @@ public class TaskManagerActivity extends BaseActivity {
 		super.onStart();
 	}
 
-	static class ViewHolder {
+	class ViewHolder {
 		ImageView iv_icon;
 		TextView tv_name;
 		TextView tv_size;

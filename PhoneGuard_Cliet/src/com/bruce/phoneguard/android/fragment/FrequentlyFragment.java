@@ -50,8 +50,8 @@ public class FrequentlyFragment extends BaseFragment {
 		resideMenu = menuActivity.getResideMenu();
 
 		// add gesture operation's ignored views
-		FrameLayout ignored_view = (FrameLayout) parentView.findViewById(R.id.ignored_view);
-		resideMenu.addIgnoredView(ignored_view);
+//		FrameLayout ignored_view = (FrameLayout) parentView.findViewById(R.id.ignored_view);
+//		resideMenu.addIgnoredView(ignored_view);
 
 		gridView_menu = (GridView) parentView.findViewById(R.id.function_gridView);
 		gridView_menu.setSelector(new ColorDrawable(Color.TRANSPARENT));
@@ -66,12 +66,12 @@ public class FrequentlyFragment extends BaseFragment {
 
 	@Override
 	protected void initListener() {
-		parentView.findViewById(R.id.btn_open_menu).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
-			}
-		});
+//		parentView.findViewById(R.id.btn_open_menu).setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View view) {
+//				resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
+//			}
+//		});
 
 		gridView_menu.setOnItemClickListener(new OnItemClickListener() {
 

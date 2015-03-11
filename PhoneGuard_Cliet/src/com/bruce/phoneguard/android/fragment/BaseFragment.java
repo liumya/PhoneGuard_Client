@@ -95,6 +95,10 @@ public abstract class BaseFragment extends Fragment {
 			Intent toAppLock = new Intent(getActivity(), AppLockActivity.class);
 			getActivity().startActivity(toAppLock);
 			break;
+		case FescoConfig.BIG_FILE_MANAGE:
+			Intent toBigFileManage = new Intent(getActivity(), BigFileManageActivity.class);
+			getActivity().startActivity(toBigFileManage);
+			break;
 
 		default:
 			break;

@@ -80,6 +80,7 @@ public class InitData {
 		list.add(tel_enquiries);
 		list.add(data_bakeup);
 		list.add(program_lock);
+        list.add(big_file_manage);
 	}
 
 	public static InitData getInstance() {
@@ -91,7 +92,6 @@ public class InitData {
 
 	/**
 	 * @author qizhenghao
-	 * @param context
 	 *            当前activity date: 2014年12月27日19:16:22
 	 * @return 所有功能List
 	 */
@@ -149,6 +149,7 @@ public class InitData {
 	GridItem program_lock = new GridItem(FescoConfig.PROGRAM_LOCK, "程序加锁",
 			FescoConfig.PROGRAM_LOCK_STR, R.drawable.selector_off_item,
 			false);
-
+    GridItem big_file_manage = new GridItem(FescoConfig.BIG_FILE_MANAGE, "大文件管理",
+            FescoConfig.BIG_FILE_MANAGE_STR, R.drawable.selector_task_mana_item, false);
 
 }

@@ -103,6 +103,7 @@
         <activity android:name="com.bruce.phoneguard.android.activity.NumberAddressQueryActivity" >
         </activity>
         <activity android:name=".activity.AppLockActivity"></activity>
+        <activity android:name=".activity.BigFileManageActivity"></activity>
 
         <!-- 2 特殊的广播接收者，清单文件中配置，拷贝api文档 -->
         <receiver android:name="com.bruce.phoneguard.android.receivers.DesktopWidget" >

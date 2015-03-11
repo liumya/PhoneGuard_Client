@@ -3,7 +3,9 @@
     xmlns:itheima="http://schemas.android.com/apk/res/com.itheima.mobileguard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/white"
+        >
 
     <ImageView
         android:layout_width="match_parent"
@@ -43,10 +45,12 @@
     </FrameLayout>
 
     <Button
+            android:id="@+id/clean_all_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_selector"
-        android:onClick="cleanAll"
-        android:text="清除全部" />
+        android:onClick="onClick"
+        android:textColor="@color/black"
+        android:text="清理全部" />
 
 </LinearLayout>

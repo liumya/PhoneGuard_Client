@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bruce.phoneguard.android.R;
+import com.bruce.phoneguard.android.utils.LogUtils;
 
 /**
  * @author qizhenghao
@@ -29,7 +30,7 @@ import com.bruce.phoneguard.android.R;
  * @version
  * function: 清理缓存
  */
-public class CleanCacheActivity extends BaseActivity {
+public class CleanCacheActivity extends BaseActivity implements View.OnClickListener{
 	protected static final int SCANNING = 1;
 	protected static final int FINISH = 2;
 	private PackageManager pm;
@@ -50,9 +51,9 @@ public class CleanCacheActivity extends BaseActivity {
 			case FINISH:
 				ll_loading.setVisibility(View.INVISIBLE);
 				if(cacheInfos.size()==0){
-					Toast.makeText(getApplicationContext(), "恭喜您，您的手机干净w无比。..", 1).show();
+					Toast.makeText(getApplicationContext(), "恭喜您，您的手机干净w无比。..", Toast.LENGTH_SHORT).show();
 				}else{
-					Toast.makeText(getApplicationContext(), "你的手机是垃圾堆，赶紧清理把", 1).show();
+					Toast.makeText(getApplicationContext(), "你的手机是垃圾堆，赶紧清理把", Toast.LENGTH_SHORT).show();
 					for(final CacheInfo cacheinfo : cacheInfos){
 						View view = View.inflate(getApplicationContext(), R.layout.item_cache_info, null);
 						ImageView iv_icon = (ImageView) view.findViewById(R.id.iv_app_icon);
@@ -85,6 +86,20 @@ public class CleanCacheActivity extends BaseActivity {
 			}
 		};
 	};
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.clean_all_btn:
+                cleanAll();
+                break;
+            case 1:
+
+                break;
+            default:
+                break;
+        }
+    }
 
     class ClearCacheObserver extends IPackageDataObserver.Stub {
         public void onRemoveCompleted(final String packageName, final boolean succeeded) {
@@ -182,8 +197,9 @@ public class CleanCacheActivity extends BaseActivity {
 	}
 	
 	
-	private void cleanAll(View view){
+	private void cleanAll(){
 		//清除全部 缓存 利用Android系统的一个漏洞。 freeStorageAndNotify
+        LogUtils.d("cleanAll");
 		Method[] methods = PackageManager.class.getMethods();
 		for(Method method:methods){
 			if("freeStorageAndNotify".equals(method.getName())){
@@ -195,7 +211,7 @@ public class CleanCacheActivity extends BaseActivity {
 				return ;
 			}
 		}
-		Toast.makeText(this, "清理完毕", 0).show();
+		Toast.makeText(this, "清理完毕", Toast.LENGTH_SHORT).show();
 		
 	}
 

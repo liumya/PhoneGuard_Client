@@ -51,6 +51,8 @@ public class FescoConfig {
 	public static final String DATA_BAKEUP_STR = "DATA_BAKEUP";
 	public static final int PROGRAM_LOCK = 9;
 	public static final String PROGRAM_LOCK_STR = "PROGRAM_LOCK";
+	public static final int BIG_FILE_MANAGE = 10;
+	public static final String BIG_FILE_MANAGE_STR = "BIG_FILE_MANAGE";
 
 	
 	public static final int STAFF_SEX_MALE = 0 ;	//男
