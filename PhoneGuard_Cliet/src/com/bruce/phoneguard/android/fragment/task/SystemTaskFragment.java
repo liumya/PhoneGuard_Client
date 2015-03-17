@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import com.bruce.phoneguard.android.R;
-import com.bruce.phoneguard.android.SysApplication;
 import com.bruce.phoneguard.android.control.TaskManagerAdapter;
 import com.bruce.phoneguard.android.fragment.BaseFragment;
 import com.bruce.phoneguard.android.model.TaskInfo;
@@ -31,13 +30,13 @@ public class SystemTaskFragment extends BaseFragment implements SwipeRefreshLayo
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mContentView = inflater.inflate(R.layout.fragment_task, null);
+        mContentView = inflater.inflate(R.layout.fragment_lv, null);
         return mContentView;
     }
 
     @Override
     protected void initView() {
-        listView = (ListView) mContentView.findViewById(R.id.lv_taskmanger);
+        listView = (ListView) mContentView.findViewById(R.id.lv);
     }
 
     @Override

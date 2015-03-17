@@ -15,13 +15,13 @@ import android.widget.Toast;
 
 import com.bruce.phoneguard.android.R;
 import com.bruce.phoneguard.android.SysApplication;
-import com.bruce.phoneguard.android.control.TaskFramentPagerAdapter;
+import com.bruce.phoneguard.android.control.ViewPagerFramentAdapter;
 import com.bruce.phoneguard.android.fragment.task.AdviceTaskFragment;
 import com.bruce.phoneguard.android.fragment.task.SystemTaskFragment;
 import com.bruce.phoneguard.android.fragment.task.UserTaskFragment;
 import com.bruce.phoneguard.android.model.TaskInfo;
 import com.bruce.phoneguard.android.model.parser.TaskInfoParser;
-import com.bruce.phoneguard.android.ui.DiscoverTabPageIndicator;
+import com.bruce.phoneguard.android.ui.TabViewPagerIndicator;
 import com.bruce.phoneguard.android.utils.SystemInfoUtils;
 
 public class TaskManagerActivity extends BaseActivity {
@@ -30,13 +30,9 @@ public class TaskManagerActivity extends BaseActivity {
     private TextView clean_tv;
 
     private ViewPager viewPager;
-    private TaskFramentPagerAdapter viewPagerAdapter;
-
-    private DiscoverTabPageIndicator pageIndicator;
-
-
+    private ViewPagerFramentAdapter viewPagerAdapter;
+    private TabViewPagerIndicator pageIndicator;
     private List<Fragment> fragmentList;
-
     private AdviceTaskFragment adviceTaskFragment;
     private UserTaskFragment userTaskFragment;
     private SystemTaskFragment systemTaskFragment;
@@ -197,7 +193,7 @@ public class TaskManagerActivity extends BaseActivity {
         tv_ram_info = (TextView) findViewById(R.id.tv_ram_info);
         clean_tv = (TextView) findViewById(R.id.clean_tv);
         viewPager = (ViewPager) findViewById(R.id.discover_view_pager);
-        pageIndicator = (DiscoverTabPageIndicator) findViewById(R.id.discover_tab_page_indicator);
+        pageIndicator = (TabViewPagerIndicator) findViewById(R.id.discover_tab_page_indicator);
         pageIndicator.setViewIds(new int[]{R.id.discover_tab_line_layout,
                 R.id.discover_tab_one, R.id.discover_tab_two, R.id.discover_tab_three
         });
@@ -231,7 +227,7 @@ public class TaskManagerActivity extends BaseActivity {
         fragmentList.add(userTaskFragment);
         fragmentList.add(systemTaskFragment);
 
-        viewPagerAdapter = new TaskFramentPagerAdapter(getSupportFragmentManager(), fragmentList);
+        viewPagerAdapter = new ViewPagerFramentAdapter(getSupportFragmentManager(), fragmentList);
         viewPager.setAdapter(viewPagerAdapter);
         pageIndicator.setViewPager(viewPager);
         fillData();

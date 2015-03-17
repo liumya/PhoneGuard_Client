@@ -31,13 +31,13 @@ public class UserTaskFragment extends BaseFragment implements SwipeRefreshLayout
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mContentView = inflater.inflate(R.layout.fragment_task, null);
+        mContentView = inflater.inflate(R.layout.fragment_lv, null);
         return mContentView;
     }
 
     @Override
     protected void initView() {
-        listView = (ListView) mContentView.findViewById(R.id.lv_taskmanger);
+        listView = (ListView) mContentView.findViewById(R.id.lv);
     }
 
     @Override

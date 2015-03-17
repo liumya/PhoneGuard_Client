@@ -27,9 +27,12 @@
     <color name="blue">#ff0f81d9</color>
     <color name="font_value">#ff888271</color>
     <color name="transparent">#00000000</color>
+    <color name="transparent_99">#99000000</color>
     <color name="transparent_90">#90000000</color>
     <color name="transparent_20">#20000000</color>
     <color name="transparent_40">#40000000</color>
+    <color name="transparent_60">#40000000</color>
+    <color name="transparent_80">#40000000</color>
     <color name="whitesmoke">#F5F5F5</color>
  <!-- 烟白色 -->
  	<color name="line_below_label">#ffb2cad0</color>

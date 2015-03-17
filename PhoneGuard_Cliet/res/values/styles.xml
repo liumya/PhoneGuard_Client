@@ -49,6 +49,21 @@
         <item name="android:textSize">22sp</item>
     </style>
 
+    <style name="txt_three" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:textColor">@color/transparent_80</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="txt_two" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:textColor">@color/transparent_80</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="txt_one" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:textColor">@color/transparent_99</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="MyProgressBar" parent="@android:style/Widget.ProgressBar">
         <item name="android:indeterminateDrawable">@drawable/progress_medium_white</item>
         <item name="android:minWidth">70dip</item>

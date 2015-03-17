@@ -383,7 +383,7 @@ public class FileUtils {
         float f;
         if (size < 1024) {
             f = (float) ((float) size / (float) 1);
-            return (df.format(new Float(f).doubleValue()) + "KB");
+            return (df.format(new Float(f).doubleValue()) + "B");
         } else if (1024 < size && size < 1024 * 1024) {
             f = (float) ((float) size / (float) 1024);
             return (df.format(new Float(f).doubleValue()) + "KB");

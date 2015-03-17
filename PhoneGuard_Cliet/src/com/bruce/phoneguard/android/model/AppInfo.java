@@ -6,13 +6,15 @@ import android.graphics.drawable.Drawable;
  * 应用程序信息的业务bean
  * 
  * @author qizhenghao
- * @version 1.1 增加属性uid
+ * @version 1.2 增加属性uid，增加checked字段
+ * @Time 2015年3月14日12:02:50
  */
 public class AppInfo {
 
 	private String apkpath;
 
 	private int uid;
+    private boolean checked = true;
 	public String getApkpath() {
 		return apkpath;
 	}
@@ -113,4 +115,12 @@ public class AppInfo {
 	public void setUid(int uid) {
 		this.uid = uid;
 	}
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
 }
