@@ -52,8 +52,8 @@ public class MenuActivity extends FragmentActivity implements
 		// 150dip.
 		resideMenu.setScaleValue(0.6f);
 		// create menu items;
-		itemFrequently = new ResideMenuItem(this, R.drawable.icon_home, getResources().getString(R.string.frequent_function));
-		itemManagement = new ResideMenuItem(this, R.drawable.icon_home, getResources().getString(R.string.management_function));
+		itemFrequently = new ResideMenuItem(this, R.drawable.icon_frequently, getResources().getString(R.string.frequent_function));
+		itemManagement = new ResideMenuItem(this, R.drawable.icon_manage, getResources().getString(R.string.management_function));
 		itemProfile = new ResideMenuItem(this, R.drawable.icon_profile,
 				R.string.personal_profile);
 		itemCalendar = new ResideMenuItem(this, R.drawable.icon_calendar,
@@ -67,14 +67,14 @@ public class MenuActivity extends FragmentActivity implements
 		itemCalendar.setOnClickListener(this);
 		itemSettings.setOnClickListener(this);
 
-		resideMenu.addMenuItem(itemFrequently, ResideMenu.DIRECTION_LEFT);
-		resideMenu.addMenuItem(itemManagement, ResideMenu.DIRECTION_LEFT);
-		resideMenu.addMenuItem(itemProfile, ResideMenu.DIRECTION_LEFT);
-		resideMenu.addMenuItem(itemCalendar, ResideMenu.DIRECTION_RIGHT);
-		resideMenu.addMenuItem(itemSettings, ResideMenu.DIRECTION_RIGHT);
+        resideMenu.addMenuItem(itemProfile, ResideMenu.DIRECTION_LEFT);
+        resideMenu.addMenuItem(itemFrequently, ResideMenu.DIRECTION_LEFT);
+        resideMenu.addMenuItem(itemManagement, ResideMenu.DIRECTION_LEFT);
+		resideMenu.addMenuItem(itemCalendar, ResideMenu.DIRECTION_LEFT);
+		resideMenu.addMenuItem(itemSettings, ResideMenu.DIRECTION_LEFT);
 
 		// You can disable a direction by setting ->
-		// resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
+		resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_RIGHT);
 
 		findViewById(R.id.title_bar_left_menu).setOnClickListener(
 				new View.OnClickListener() {

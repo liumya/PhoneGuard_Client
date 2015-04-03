@@ -133,23 +133,23 @@ public class InitData {
 			FescoConfig.PERSONAL_MANAGE_STR,
 			R.drawable.selector_garbage_clean_item, false);
 	GridItem anti_virus = new GridItem(FescoConfig.ANTI_VIRUS, "病毒查杀",
-			FescoConfig.SIGN_IN_STR, R.drawable.sign_in_normal, false);
+			FescoConfig.SIGN_IN_STR, R.drawable.virus_cleaning, false);
 	GridItem traffic_manage = new GridItem(FescoConfig.TRAFFIC_MANAGE, "流量管理",
 			FescoConfig.HUMAN_RESOURCES_STR, R.drawable.selector_off_item,
 			false);
 	GridItem against_theft = new GridItem(FescoConfig.AGAINST_THEFT, "防盗管理",
-			FescoConfig.AGAINST_THEFT_STR, R.drawable.selector_off_item,
+			FescoConfig.AGAINST_THEFT_STR, R.drawable.against_theft,
 			false);
 	GridItem tel_enquiries = new GridItem(FescoConfig.TEL_ENQUIRIES, "归属地查询",
-			FescoConfig.TEL_ENQUIRIES_STR, R.drawable.selector_off_item,
+			FescoConfig.TEL_ENQUIRIES_STR, R.drawable.tel_enquiries,
 			false);
 	GridItem data_bakeup = new GridItem(FescoConfig.DATA_BAKEUP, "数据备份",
-			FescoConfig.DATA_BAKEUP_STR, R.drawable.selector_off_item,
+			FescoConfig.DATA_BAKEUP_STR, R.drawable.data_bakeup,
 			false);
 	GridItem program_lock = new GridItem(FescoConfig.PROGRAM_LOCK, "程序加锁",
-			FescoConfig.PROGRAM_LOCK_STR, R.drawable.selector_off_item,
+			FescoConfig.PROGRAM_LOCK_STR, R.drawable.permision_management,
 			false);
     GridItem big_file_manage = new GridItem(FescoConfig.BIG_FILE_MANAGE, "大文件管理",
-            FescoConfig.BIG_FILE_MANAGE_STR, R.drawable.selector_task_mana_item, false);
+            FescoConfig.BIG_FILE_MANAGE_STR, R.drawable.large_file_management, false);
 
 }

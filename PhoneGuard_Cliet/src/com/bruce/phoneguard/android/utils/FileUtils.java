@@ -9,6 +9,7 @@ import java.util.List;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.util.Log;
+import com.bruce.phoneguard.android.R;
 import com.bruce.phoneguard.android.SysApplication;
 import com.ultrawise.softwareproduct.idevplatform.utils.BeanUtils;
 
@@ -28,6 +29,8 @@ public class FileUtils {
     private static final String FILE_3GP = ".3gp";
     private static final String FILE_WMV = ".wmv";
     private static final String FILE_RMVB = ".rmvb";
+    private static final String FILE_RAR = ".rar";
+    private static final String FILE_ZIP = ".zip";
 
     /**
      * 验证文件路径是否存在，不存在则进行创建操
@@ -407,20 +410,24 @@ public class FileUtils {
      */
     public static int getDrawableByExtension(String extension) {
         if (extension == null || extension.equals("")) {
-            return android.R.drawable.ic_menu_help;
+            return R.drawable.unknow_pic;
         }
         if (extension.equals("png") || extension.equals("jpeg") || extension.equals("gif") || extension.equals("jpg")) {
-            return android.R.drawable.ic_menu_gallery;
+            return R.drawable.photo_pic;
         } else if (extension.equals("3gp") || extension.equals("mp4") || extension.equals("rmvb") || extension.equals("wmv") || extension.equals("avi")) {
-            return android.R.drawable.ic_menu_slideshow;
+            return R.drawable.movie_pic;
         } else if (extension.equals("mp3")) {
-            return android.R.drawable.ic_menu_sort_by_size;
+            return R.drawable.music_pic;
         } else if (extension.equals("apk")) {
-            return android.R.drawable.ic_menu_compass;
+            return R.drawable.apk_pic;
         } else if (extension.equals("txt")) {
-            return android.R.drawable.ic_menu_save;
+            return R.drawable.txt_pic;
+        } else if (extension.equals("dat")) {
+            return R.drawable.dat_pic;
+        } else if (extension.equals("rar") || extension.equals("zip")) {
+            return R.drawable.rar_pic;
         }
 
-        return android.R.drawable.ic_menu_help;
+        return R.drawable.unknow_pic;
     }
 }

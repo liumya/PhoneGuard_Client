@@ -88,8 +88,8 @@ public abstract class BaseFragment extends Fragment {
 			getActivity().startActivity(toTelEnquires);
 			break;
 		case FescoConfig.DATA_BAKEUP:
-//			Intent toAddFreq = new Intent(getActivity(), AddFreqActivity.class);
-//			getActivity().startActivity(toAddFreq);
+			Intent toDataBakeup = new Intent(getActivity(), DataBakeupActivity.class);
+			getActivity().startActivity(toDataBakeup);
 			break;
 		case FescoConfig.PROGRAM_LOCK:
 			Intent toAppLock = new Intent(getActivity(), AppLockActivity.class);
@@ -119,8 +119,6 @@ public abstract class BaseFragment extends Fragment {
 
 	/**全部初始化，包括view、data、listener*/
 	public void init() {
-        mContext = getActivity();
-        mActivity = getActivity();
 		initView();
 		initData();
 		initListener();
@@ -134,4 +132,11 @@ public abstract class BaseFragment extends Fragment {
 
 	/** 设置监听事件，activity创建时调用，在initView方法之后调用 */
 	abstract protected void initListener();
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = activity;
+        mContext = activity;
+    }
 }

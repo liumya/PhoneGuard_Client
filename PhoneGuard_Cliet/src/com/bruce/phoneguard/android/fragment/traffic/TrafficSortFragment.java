@@ -96,7 +96,7 @@ public class TrafficSortFragment extends BaseFragment{
                 for (int i=infoArr.length-1;i>=0;i--) {
                     appInfos.add((AppInfo) infoArr[i]);
                 }
-                getActivity().runOnUiThread(new Runnable() {
+                mActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         listView.setAdapter(new TrafficAdapter(appInfos, mContext, getActivity().getLayoutInflater()));
@@ -106,4 +106,5 @@ public class TrafficSortFragment extends BaseFragment{
             };
         }.start();
     }
+
 }

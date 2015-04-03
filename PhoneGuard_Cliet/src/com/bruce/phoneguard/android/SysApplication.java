@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.bruce.phoneguard.android.config.FescoConfig;
+import com.bruce.phoneguard.android.model.AppInfo;
 import com.bruce.phoneguard.android.model.UserInfo;
 import com.bruce.phoneguard.android.utils.LockPatternUtils;
 
@@ -26,6 +27,7 @@ public class SysApplication extends Application {
 	private static SharedPreferences sp;
 
 	private LockPatternUtils mLockPatternUtils;
+
 
 	private List<Activity> mList = new LinkedList<Activity>();
 	@Override

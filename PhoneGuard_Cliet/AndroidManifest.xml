@@ -52,6 +52,14 @@
     <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
     <uses-permission android:name="android.permission.VIBRATE"/>
 
+    <!-- 读写通讯录权限-->
+    <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
+
+    <!-- 读写短信权限-->
+    <uses-permission android:name="android.permission.READ_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SMS"></uses-permission>
+
     <application
         android:name="com.bruce.phoneguard.android.SysApplication"
         android:allowBackup="true"
@@ -104,6 +112,7 @@
         </activity>
         <activity android:name=".activity.AppLockActivity"></activity>
         <activity android:name=".activity.BigFileManageActivity"></activity>
+        <activity android:name=".activity.DataBakeupActivity"></activity>
 
         <!-- 2 特殊的广播接收者，清单文件中配置，拷贝api文档 -->
         <receiver android:name="com.bruce.phoneguard.android.receivers.DesktopWidget" >
