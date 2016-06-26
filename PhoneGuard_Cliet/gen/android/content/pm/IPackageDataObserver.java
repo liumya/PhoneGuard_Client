@@ -2,7 +2,7 @@
 
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: D:\\WorkSpace\\Graduation_Design\\PhoneGuard_Client\\PhoneGuard_Cliet\\src\\android\\content\\pm\\IPackageDataObserver.aidl
+ * Original file: F:\\WorkSpace\\GitHub\\PhoneGuard_Client\\PhoneGuard_Cliet\\src\\android\\content\\pm\\IPackageDataObserver.aidl
  */
 package android.content.pm;
 /**
